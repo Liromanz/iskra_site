@@ -35,6 +35,11 @@ body {
         font-family: "DS Eraser Cyr";
     }
 
+    .main-name{
+        background-image: url('../img/girlyanda.png');
+        background-size: contain;
+    }
+
     .dish-name{
         color: white;
         text-decoration: underline;
