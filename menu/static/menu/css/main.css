@@ -13,12 +13,12 @@
 }
 
 body {
-    background-image: url('../img/background.png');
+    background-image: url('../img/background_1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-color: aqua;
+    background-color: black;
 
     h1{
         font-family: "DS Eraser Cyr";
@@ -49,12 +49,11 @@ body {
     }
 
     .dish-card {
-        width: 530px;
-
         .dish {
             height: 200px;
             width: 200px;
             border-radius: 100px;
+            object-fit: cover;
             position: relative;
             border: 10px solid transparent;
             border-color: #b5b5b5;

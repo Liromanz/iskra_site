@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 {% load static %}
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,28 +14,33 @@
 <body class="text-center">
 <h1 class="main-name p-3">ИСКРА</h1>
 <div class="container-sm">
-    <div class="row dish-card ">
+    {%for one_dish in dishes %}
+    {% if forloop.counter|divisibleby:2 %}
+    <div class="row dish-card">
         <div class="col-5 d-flex">
-            <img class="dish" src="{% static 'menu/img/3faad098ad17f3dd5cf6f7bf9d792f1e.jpg' %}" alt="">
+            <img class="dish ms-auto" src="{{ one_dish.picture.url }}" alt="">
         </div>
         <div class="col-7 text-start">
-            <h3 class="dish-name">Хот дог</h3>
-            <h3 class="dish-price">170 РУБ.</h3>
-            <p>200 ГР.</p>
-            <p>(булочка для хот-дога, соус горчичный, кетчуп, сосиска австрийская, лист салата, огурец, помидор)</p>
+            <h3 class="dish-name">{{ one_dish.name }}</h3>
+            <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
+            <p>{{ one_dish.additional_info }}</p>
+            <p>{{ one_dish.compound }}</p>
         </div>
     </div>
+    {% else %}
     <div class="row dish-card ms-auto">
         <div class="col-7 text-end">
-            <h3 class="dish-name">Хот дог</h3>
-            <h3 class="dish-price">170 РУБ.</h3>
-            <p>200 ГР.</p>
-            <p>(булочка для хот-дога, соус горчичный, кетчуп, сосиска австрийская, лист салата, огурец, помидор)</p>
+            <h3 class="dish-name">{{ one_dish.name }}</h3>
+            <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
+           <p>{{ one_dish.additional_info }}</p>
+            <p>{{ one_dish.compound }}</p>
         </div>
         <div class="col-5 d-flex">
-            <img class="dish" src="{% static 'menu/img/3faad098ad17f3dd5cf6f7bf9d792f1e.jpg' %}" alt="">
+            <img class="dish" src="{{ one_dish.picture.url }}" alt="">
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
 </div>
 
 

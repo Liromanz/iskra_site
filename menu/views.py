@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import *
 
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'main_menu.html')
+    dishes = Dish.objects.all()
+    return render(request, 'main_menu.html', context={"dishes": dishes})
