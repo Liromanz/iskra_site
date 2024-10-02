@@ -1,14 +1,5 @@
 
 
-@font-face {
-  font-family: 'DS Eraser Cyr';
-	src: url('../fonts/ds_eraser_cyr.eot'); /* IE 9 Compatibility Mode */
-	src: url('../fonts/ds_eraser_cyr.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('../fonts/ds_eraser_cyr.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/ds_eraser_cyr.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('../fonts/ds_eraser_cyr.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('../fonts/ds_eraser_cyr.svg#ds_eraser_cyr') format('svg'); /* Chrome < 4, Legacy iOS */
-}
 
 @font-face {
   font-family: "Neucha";
@@ -16,6 +7,10 @@
 }
 
 
+@font-face {
+  font-family: "DS Eraser Cyr";
+	src: url("../fonts/DS Eraser Cyr.ttf"); /* IE 9 Compatibility Mode */
+}
 
 body {
     background-image: url('../img/background.png');
@@ -37,31 +32,28 @@ body {
     }
 
     h3{
-        font-family: 'DsEraser';
+        font-family: "DS Eraser Cyr";
+    }
+
+    .dish-name{
         color: white;
+        text-decoration: underline;
+    }
+    .dish-price{
+        color: red;
     }
 
     .dish-card {
+        width: 530px;
+
         .dish {
             height: 200px;
             width: 200px;
             border-radius: 100px;
             position: relative;
-            right: 80px;
-            /*border: 10px solid transparent;*/
-            /*border-image: radial-gradient(ellipse farthest-corner at 50% 50%, rgba(62, 62, 62, 1) 82%, rgba(255, 255, 255, 1) 100%);*/
+            border: 10px solid transparent;
+            border-color: #b5b5b5;
         }
 
-        .dish::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            bottom: -2px;
-            left: -2px;
-            right: -2px;
-            background: linear-gradient(35deg, red, green);
-            border-radius: 34px;
-            z-index: -1;
-        }
     }
 }
