@@ -18,7 +18,7 @@
     {%for one_dish in dishes %}
     {% if forloop.counter|divisibleby:2 %}
     <div class="row dish-card">
-        <div class="col-5 d-flex">
+        <div class="col-5 d-flex justify-content-end">
             <img class="dish ms-auto" src="{{ one_dish.picture.url }}" alt="">
         </div>
         <div class="col-7 text-start">
