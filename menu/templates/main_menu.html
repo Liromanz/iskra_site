@@ -15,32 +15,35 @@
 <body class="text-center">
 <h1 class="main-name p-3">ИСКРА</h1>
 <div class="container-sm">
-    {%for one_dish in dishes %}
-    {% if forloop.counter|divisibleby:2 %}
-    <div class="row dish-card">
-        <div class="col-5 d-flex justify-content-end">
-            <img class="dish ms-auto" src="{{ one_dish.picture.url }}" alt="">
-        </div>
-        <div class="col-7 text-start">
-            <h3 class="dish-name">{{ one_dish.name }}</h3>
-            <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
-            <p>{{ one_dish.additional_info }}</p>
-            <p>{{ one_dish.compound }}</p>
-        </div>
-    </div>
-    {% else %}
-    <div class="row dish-card ms-auto">
-        <div class="col-7 text-end">
-            <h3 class="dish-name">{{ one_dish.name }}</h3>
-            <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
-           <p>{{ one_dish.additional_info }}</p>
-            <p>{{ one_dish.compound }}</p>
-        </div>
-        <div class="col-5 d-flex">
-            <img class="dish" src="{{ one_dish.picture.url }}" alt="">
-        </div>
-    </div>
-    {% endif %}
+    {% for one_dish in dishes %}
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="row dish-card">
+                <div class="col-5 figure-img img-fluid p-0 p-ms-2">
+                    <div>
+                        <img class="dish float-end" src="{{ one_dish.picture.url }}" alt="">
+                    </div>
+
+                </div>
+                <div class="col-7 text-start">
+                    <h3 class="dish-name">{{ one_dish.name }}</h3>
+                    <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
+                    <p>{{ one_dish.additional_info }}</p>
+                    <p>{{ one_dish.compound }}</p>
+                </div>
+            </div>
+        {% else %}
+            <div class="row dish-card ms-auto">
+                <div class="col-7 text-end">
+                    <h3 class="dish-name">{{ one_dish.name }}</h3>
+                    <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
+                    <p>{{ one_dish.additional_info }}</p>
+                    <p>{{ one_dish.compound }}</p>
+                </div>
+                <div class="col-5">
+                    <img class="dish float-start figure-img" src="{{ one_dish.picture.url }}" alt="">
+                </div>
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 

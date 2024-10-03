@@ -6,10 +6,13 @@
   src: url("../fonts/Neucha-Regular.ttf") format("TrueType");
 }
 
-
 @font-face {
-  font-family: "DS Eraser Cyr";
-	src: url("../fonts/DS Eraser Cyr.ttf"); /* IE 9 Compatibility Mode */
+  font-family: "DsEraser";
+  src: url("../fonts/1601623942si.ttf") format("TrueType");
+}
+
+html{
+    overflow-x:hidden;
 }
 
 body {
@@ -21,7 +24,7 @@ body {
     background-color: black;
 
     h1{
-        font-family: "DS Eraser Cyr";
+        font-family: "DsEraser";
         color: white;
         font-size: 60px;
     }
@@ -32,7 +35,7 @@ body {
     }
 
     h3{
-        font-family: "DS Eraser Cyr";
+        font-family: "DsEraser";
     }
 
     .main-name{
@@ -50,14 +53,19 @@ body {
 
     .dish-card {
         .dish {
-            height: 200px;
-            width: 200px;
+            height: 150px;
+            width: 150px;
             border-radius: 100px;
             object-fit: cover;
             position: relative;
             border: 10px solid transparent;
             border-color: #b5b5b5;
+            @media (min-width: 700px) {
+                height: 200px;
+                width: 200px;
+            }
         }
+
 
     }
 }
