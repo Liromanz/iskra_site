@@ -7,4 +7,5 @@ from .models import *
 
 def index(request):
     dishes = Dish.objects.all()
-    return render(request, 'main_menu.html', context={"dishes": dishes})
+    categories = DishCategory.objects.all()
+    return render(request, 'main_menu.html', context={"dishes": dishes, "categories": categories})

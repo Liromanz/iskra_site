@@ -15,7 +15,10 @@
 <body class="text-center">
 <h1 class="main-name p-3">ИСКРА</h1>
 <div class="container-sm">
+{% for category in categories %}
+        <h2 class="my-5">{{ category.name }}</h2>
     {% for one_dish in dishes %}
+        {% if one_dish.category == category %}
         {% if forloop.counter|divisibleby:2 %}
             <div class="row dish-card">
                 <div class="col-5 figure-img img-fluid p-0 p-ms-2">
@@ -44,6 +47,8 @@
                 </div>
             </div>
         {% endif %}
+        {% endif %}
+    {% endfor %}
     {% endfor %}
 </div>
 

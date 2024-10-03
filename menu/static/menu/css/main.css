@@ -29,6 +29,12 @@ body {
         font-size: 60px;
     }
 
+    h2{
+        color: white;
+        font-size: 50px;
+        font-family: "DsEraser";
+    }
+
     p{
         font-family: "Neucha";
         color: white;
