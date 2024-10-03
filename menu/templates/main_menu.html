@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-7 text-start">
                     <h3 class="dish-name">{{ one_dish.name }}</h3>
-                    <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
+                    <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
                     <p>{{ one_dish.additional_info }}</p>
                     <p>{{ one_dish.compound }}</p>
                 </div>
@@ -35,7 +35,7 @@
             <div class="row dish-card ms-auto">
                 <div class="col-7 text-end">
                     <h3 class="dish-name">{{ one_dish.name }}</h3>
-                    <h3 class="dish-price">{{ one_dish.price }} РУБ.</h3>
+                    <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
                     <p>{{ one_dish.additional_info }}</p>
                     <p>{{ one_dish.compound }}</p>
                 </div>
