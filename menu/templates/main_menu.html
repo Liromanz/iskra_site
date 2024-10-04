@@ -34,14 +34,14 @@
         </div>
     </div>
     {% else %}
-    <div class="row dish-card ms-auto">
+    <div class="row dish-card">
         <div class="col-7 text-end">
             <h3 class="dish-name">{{ one_dish.name }}</h3>
             <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
             <p>{{ one_dish.additional_info }}</p>
             <p>{{ one_dish.compound }}</p>
         </div>
-        <div class="col-5">
+        <div class="col-5 figure-img img-fluid p-0 p-ms-2">
             <img class="dish float-start figure-img" src="{{ one_dish.picture.url }}" alt="">
         </div>
     </div>
