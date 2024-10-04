@@ -13,41 +13,39 @@
     <title>Кафе ИСКРА - Меню</title>
 </head>
 <body class="text-center">
-<h1 class="main-name p-3">ИСКРА</h1>
+<h1 class="main-name py-3">ИСКРА</h1>
 <div class="container-sm">
-{% for category in categories %}
-        <h2 class="my-5">{{ category.name }}</h2>
-    {% for one_dish in dishes %}
-        {% if one_dish.category == category %}
-        {% if forloop.counter|divisibleby:2 %}
-            <div class="row dish-card">
-                <div class="col-5 figure-img img-fluid p-0 p-ms-2">
-                    <div>
-                        <img class="dish float-end" src="{{ one_dish.picture.url }}" alt="">
-                    </div>
+    {% for menu_pos in menu %}
+    <h2 class="my-5">{{ menu_pos.category }}</h2>
+    {% for one_dish in menu_pos.dishes %}
+    {% if forloop.counter|divisibleby:2 %}
+    <div class="row dish-card">
+        <div class="col-5 figure-img img-fluid p-0 p-ms-2">
+            <div>
+                <img class="dish float-end" src="{{ one_dish.picture.url }}" alt="">
+            </div>
 
-                </div>
-                <div class="col-7 text-start">
-                    <h3 class="dish-name">{{ one_dish.name }}</h3>
-                    <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
-                    <p>{{ one_dish.additional_info }}</p>
-                    <p>{{ one_dish.compound }}</p>
-                </div>
-            </div>
-        {% else %}
-            <div class="row dish-card ms-auto">
-                <div class="col-7 text-end">
-                    <h3 class="dish-name">{{ one_dish.name }}</h3>
-                    <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
-                    <p>{{ one_dish.additional_info }}</p>
-                    <p>{{ one_dish.compound }}</p>
-                </div>
-                <div class="col-5">
-                    <img class="dish float-start figure-img" src="{{ one_dish.picture.url }}" alt="">
-                </div>
-            </div>
-        {% endif %}
-        {% endif %}
+        </div>
+        <div class="col-7 text-start">
+            <h3 class="dish-name">{{ one_dish.name }}</h3>
+            <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
+            <p>{{ one_dish.additional_info }}</p>
+            <p>{{ one_dish.compound }}</p>
+        </div>
+    </div>
+    {% else %}
+    <div class="row dish-card ms-auto">
+        <div class="col-7 text-end">
+            <h3 class="dish-name">{{ one_dish.name }}</h3>
+            <h3 class="dish-price">{{ one_dish.price|floatformat:0 }} РУБ.</h3>
+            <p>{{ one_dish.additional_info }}</p>
+            <p>{{ one_dish.compound }}</p>
+        </div>
+        <div class="col-5">
+            <img class="dish float-start figure-img" src="{{ one_dish.picture.url }}" alt="">
+        </div>
+    </div>
+    {% endif %}
     {% endfor %}
     {% endfor %}
 </div>

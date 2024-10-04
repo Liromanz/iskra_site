@@ -7,7 +7,7 @@ class DishCategory(models.Model):
     name = models.CharField(max_length=50, verbose_name="Название категории", null=False)
 
     def __str__(self):
-        return f"Категория - {self.name}"
+        return f"{self.name}"
 
     class Meta():
         verbose_name = "Категория блюда"
